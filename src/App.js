@@ -1,10 +1,9 @@
-import './App.scss';
-import {SignInForm} from "./SignInForm";
+import SignInForm from "./SignInForm";
 
 function App() {
   return (
     <div className="App">
-        {SignInForm()}
+      <SignInForm />
     </div>
   );
 }

@@ -1,27 +1,42 @@
-import {Button, Form} from "react-bootstrap";
+
+import TextField from "@material-ui/core/TextField"
+import Button from "@material-ui/core/Button"
+import styled from "styled-components";
 import './SignInForm.scss';
+import Card from "@material-ui/core/Card"
+import CardContent from "@material-ui/core/CardContent"
+import PrivacyPolicy from "./PrivacyPolicy";
 
-export function SignInForm() {
-    return <div className={"FormContainer"}>
-        <Form>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email"/>
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password"/>
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="I'm a robot"/>
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-        </Form>
-    </div>;
+
+
+const FormContainer = styled.div`
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 10px;
+`;
+const FormActions = styled.div`
+    margin: 1.5rem 0;
+`;
+export default function SignInForm() {
+    return (
+        <FormContainer>
+            <Card>
+                <CardContent>
+                <form>
+                    <TextField margin="normal" fullWidth type="email" label="Email" size="large" />
+                    <TextField margin="normal" fullWidth type="password" label="Password" size="large" helperText="8-15 characters" />
+
+                    <FormActions>
+                        <Button fullWidth variant="contained" color="primary" type="submit">
+                            Login
+                        </Button>
+                    </FormActions>
+                    <PrivacyPolicy />
+
+                </form>
+                </CardContent>
+            </Card>
+        </FormContainer>
+    );
 }
