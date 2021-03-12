@@ -4,7 +4,7 @@ import Link from "@material-ui/core/Link"
 import Button from "@material-ui/core/Button"
 
 import { Typography } from "@material-ui/core";
-Modal.setAppElement('#root');
+
 const customStyles = {
   content : {
     top: '50%',
